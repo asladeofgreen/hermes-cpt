@@ -37,7 +37,7 @@ def test_parse_files(file_suffix):
     assert isinstance(data, list)
     assert data
     for consumption in data:
-        for key in ['hpc', 'project', 'project_consumption']:
+        for key in ['hpc', 'project', 'consumption_by_machine']:
             assert key in consumption
 
 
