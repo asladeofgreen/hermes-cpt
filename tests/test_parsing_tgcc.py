@@ -9,6 +9,8 @@
 
 
 """
+import hashlib
+
 import pytest
 
 import hermes_cpt as hcpt
@@ -16,7 +18,7 @@ from . import utils as tu
 
 
 
-@pytest.mark.parametrize("file_suffix", ('01', '02'))
+@pytest.mark.parametrize("file_suffix", ('01', '02', '03'))
 def test_get_files(file_suffix):
     """Test opening target test CPT files.
 
@@ -25,7 +27,7 @@ def test_get_files(file_suffix):
     assert isinstance(cpt, str)
 
 
-@pytest.mark.parametrize("file_suffix", ('01', '02'))
+@pytest.mark.parametrize("file_suffix", ('01', '02', '03'))
 def test_parse_files(file_suffix):
     """Test parsing a relatively simply CPT file.
 
@@ -35,5 +37,15 @@ def test_parse_files(file_suffix):
     assert isinstance(data, list)
     assert data
     for consumption in data:
-        for key in ['hpc', 'project', 'consumption_by_machine']:
+        for key in ['hpc', 'project', 'project_consumption']:
             assert key in consumption
+
+
+@pytest.mark.parametrize("file_suffix", ('01', '02', '03'))
+def test_hash_files(file_suffix):
+    """Test hashing a relatively simply CPT file.
+
+    """
+    fstream = tu.get_cpt_file(hcpt.HPC_TGCC, file_suffix)
+    fhash = hashlib.md5(fstream).hexdigest()
+    assert len(fhash) == 32

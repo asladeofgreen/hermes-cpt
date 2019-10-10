@@ -31,17 +31,13 @@ def _map_project_consumption(cpt):
     # Extract data from cpt file.
     consumption = [_map_machine_consumption(i) for i in _yield_cpt_of_machine(cpt)]
     project = cpt[0].split(' ')[3]
-    project_end_date = dt.datetime.strptime(cpt[-1].split(' ')[-1], "%Y-%m-%d")
-    project_start_date = dt.datetime(dt.datetime.utcnow().year, 01, 01)
+    project_deadline = cpt[-1].split(' ')[-1]
 
     obj = OrderedDict()
-    obj['hpc'] = OrderedDict()
-    obj['hpc']['name'] = hcpt.HPC_TGCC
-    obj['project'] = OrderedDict()
-    obj['project']['name'] = project
-    obj['project']['end_date'] = project_end_date
-    obj['project']['start_date'] = project_start_date
-    obj['consumption_by_machine'] = consumption
+    obj['hpc'] = hcpt.HPC_TGCC
+    obj['project'] = project
+    obj['project_deadline'] = project_deadline
+    obj['project_consumption'] = consumption
 
     return obj
 
@@ -52,16 +48,30 @@ def _map_machine_consumption(cpt):
     """
     # Extract data from cpt file.
     allocation = [i.split(' ')[-1] for i in cpt if i.lower().startswith('allocated')][-1]
-    allocation_date = dt.datetime.strptime(cpt[0].split(' ')[-1], "%Y-%m-%d")
+    allocation_date = cpt[0].split(' ')[-1]
     name = cpt[0][cpt[0].index('on'): cpt[0].index('at')][3:-1]
-    consumption = [_map_user_consumption(i) for i in _yield_cpt_of_users(cpt)]
+    consumption = [_map_users_consumption(i) for i in _yield_cpt_of_users(cpt)]
 
     obj = OrderedDict()
-    obj["machine"] = OrderedDict()
-    obj["machine"]["name"] = name
-    obj["machine"]["allocation"] = float(allocation)
-    obj["machine"]["allocation_date"] = allocation_date
-    obj["consumption_by_sub_project"] = consumption
+    obj["machine"] = name
+    obj["machine_allocation"] = float(allocation)
+    obj["machine_allocation_date"] = allocation_date
+    obj["machine_consumption"] = consumption
+
+    return obj
+
+
+def _map_users_consumption(cpt):
+    """Maps CPT content to resource consumption for a set of users.
+
+    """
+    # Extract data from cpt file.
+    consumption = [_map_user_consumption(i) for i in cpt]
+    sub_project = None if not cpt or not len(cpt[0]) == 3 else cpt[0][1]
+
+    obj = OrderedDict()
+    obj["sub_project"] = sub_project
+    obj["user_consumption"] = consumption
 
     return obj
 
@@ -70,16 +80,9 @@ def _map_user_consumption(cpt):
     """Maps CPT content to resource consumption by user.
 
     """
-    # Extract data from cpt file.
-    consumption = [(i[0], float(i[-1])) for i in cpt]
-    sub_project = None if not cpt or not len(cpt[0]) == 3 else cpt[0][1]
-
     obj = OrderedDict()
-    obj["sub_project"] = sub_project
-    obj["consumption_by_user"] = [{
-        'login': i,
-        'hours_consumed': j
-        } for i, j in consumption]
+    obj["login"] = cpt[0]
+    obj["hours_consumed"] = float(cpt[-1])
 
     return obj
 

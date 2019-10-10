@@ -27,6 +27,6 @@ def get_cpt_fpath(hpc_identifier, file_suffix):
     """
     path = os.path.dirname(__file__)
     path = os.path.join(path, 'cpt_files')
-    path = os.path.join(path, '{}-{}.dat'.format(hpc_identifier, file_suffix))
+    path = os.path.join(path, '{}-{}.log'.format(hpc_identifier, file_suffix))
 
     return path
