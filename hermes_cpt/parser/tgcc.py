@@ -38,6 +38,7 @@ def _map_project_consumption(cpt):
     obj['project'] = project
     obj['project_deadline'] = project_deadline
     obj['project_consumption'] = consumption
+    obj["project_consumption_total"] = sum([i['machine_consumption_total'] for i in consumption])
 
     return obj
 
@@ -57,6 +58,7 @@ def _map_machine_consumption(cpt):
     obj["machine_allocation"] = float(allocation)
     obj["machine_allocation_date"] = allocation_date
     obj["machine_consumption"] = consumption
+    obj["machine_consumption_total"] = sum([i['user_consumption_total'] for i in consumption])
 
     return obj
 
@@ -72,6 +74,7 @@ def _map_users_consumption(cpt):
     obj = OrderedDict()
     obj["sub_project"] = sub_project
     obj["user_consumption"] = consumption
+    obj["user_consumption_total"] = sum([i['hours_consumed'] for i in consumption])
 
     return obj
 
