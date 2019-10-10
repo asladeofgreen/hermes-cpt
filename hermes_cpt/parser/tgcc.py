@@ -9,8 +9,6 @@
 
 
 """
-import datetime as dt
-
 from collections import OrderedDict
 
 import hermes_cpt as hcpt
@@ -127,21 +125,3 @@ def _yield_cpt_of_users(cpt):
         lines = [[l for l in k if len(l)] for k in lines]
 
         yield lines
-
-
-# Previous output - TODO remove
-# for start, end in _get_indexes(cpt):
-#     consumption = _get_consumption(cpt, start, end)
-#     yield {
-#         'machine': cpt[start].split()[5].lower(),
-#         'node': cpt[start].split()[6].lower(),
-#         'consumption_date': dt.datetime.strptime(
-#             "{} 23:59:59".format(cpt[start].split()[-1]), "%Y-%m-%d %H:%M:%S"),
-#         'consumption': consumption,
-#         'project': cpt[start].split()[3].lower(),
-#         'project_allocation': float(cpt[end - 3].split()[-1]),
-#         'project_end_date': dt.datetime.strptime(cpt[end].split()[-1], "%Y-%m-%d"),
-#         'project_start_date': dt.datetime(_YEAR, 01, 01),
-#         'project_total': float(cpt[end - 4].split()[-1]),
-#         'subtotals': _get_subtotals(consumption)
-#     }
