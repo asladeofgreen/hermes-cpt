@@ -27,6 +27,17 @@ def get_cpt_fpath(hpc_identifier, file_suffix):
     """
     path = os.path.dirname(__file__)
     path = os.path.join(path, 'cpt_files')
-    path = os.path.join(path, '{}-{}.log'.format(hpc_identifier, file_suffix))
+    path = os.path.join(path, '{}-{}.txt'.format(hpc_identifier, file_suffix))
+
+    return path
+
+
+def get_cpt_json_fpath(hpc_identifier, file_suffix):
+    """Returns path to a test CPT JSON file.
+
+    """
+    path = os.path.dirname(__file__)
+    path = os.path.join(path, 'cpt_files_json')
+    path = os.path.join(path, '{}-{}.json'.format(hpc_identifier, file_suffix))
 
     return path

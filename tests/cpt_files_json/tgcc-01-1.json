@@ -1,0 +1,223 @@
+{
+    "hpc": "tgcc",
+    "project": "gen0826",
+    "deadline": "2019-11-04",
+    "total_hours_consumed": 100528.14,
+    "machine_consumption": [
+    {
+        "machine": "Irene KNL",
+        "allocation": 200000.0,
+        "allocation_date": "2019-08-29",
+        "total_hours_consumed": 66925.5,
+        "sub_project_consumption": [
+        {
+            "sub_project": null,
+            "total_hours_consumed": 66925.5,
+            "user_consumption": [
+            {
+                "login": "abramkiv",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "audifni",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "carenton",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "clevy",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "durochar",
+                "hours_consumed": 66925.5
+            },
+            {
+                "login": "fallettl",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "flavoni",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "foujols",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "gen0826",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "labetoul",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "lebasn",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "levavasg",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "martin",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p24cozic",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p48ethe",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86caub",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86denv",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86fair",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86ghatt",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86ipsl",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86maf",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86mart",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86yann",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "wangyush",
+                "hours_consumed": 0.0
+            }]
+        }]
+    },
+    {
+        "machine": "Irene Skylake",
+        "allocation": 40000.0,
+        "allocation_date": "2019-08-29",
+        "total_hours_consumed": 33602.64,
+        "sub_project_consumption": [
+        {
+            "sub_project": null,
+            "total_hours_consumed": 33602.64,
+            "user_consumption": [
+            {
+                "login": "abramkiv",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "audifni",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "carenton",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "clevy",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "durochar",
+                "hours_consumed": 31794.75
+            },
+            {
+                "login": "fallettl",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "flavoni",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "foujols",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "gen0826",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "labetoul",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "lebasn",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "levavasg",
+                "hours_consumed": 3.13
+            },
+            {
+                "login": "martin",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p24cozic",
+                "hours_consumed": 4.0
+            },
+            {
+                "login": "p48ethe",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86caub",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86denv",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86fair",
+                "hours_consumed": 4.12
+            },
+            {
+                "login": "p86ghatt",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86ipsl",
+                "hours_consumed": 0.0
+            },
+            {
+                "login": "p86maf",
+                "hours_consumed": 622.33
+            },
+            {
+                "login": "p86mart",
+                "hours_consumed": 1.07
+            },
+            {
+                "login": "p86yann",
+                "hours_consumed": 1173.22
+            },
+            {
+                "login": "wangyush",
+                "hours_consumed": 0.02
+            }]
+        }]
+    }]
+}
