@@ -4,7 +4,7 @@ hermes-cpt
 Synopsis
 --------------------------------------
 
-hermes-cpt is a python library designed to be run upon HERMES servers.  It is installed upon HERMES message queue servers.
+hermes-cpt is a python library designed to run upon HERMES servers.  It is installed upon HERMES message queue servers.
 
 Documentation
 --------------------------------------
